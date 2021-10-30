@@ -4,18 +4,18 @@
 
 
 install packages
-### npm install
+### `npm install`
 
 to start
-### npm start
+### `npm start`
 
 
 ## other tips
 
 add the branch 
-### git branch -b <branch-name>
+### `git branch -b <branch-name>`
 
 push your changes 
-### git add .
-### git commit -m "message of the commit "
-### git push -u origin <branch-name>
+### `git add .`
+### `git commit -m "message of the commit "`
+### `git push -u origin <branch-name>`
