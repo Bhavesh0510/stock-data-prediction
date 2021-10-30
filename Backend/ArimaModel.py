@@ -1,3 +1,25 @@
+import os
+import warnings
+warnings.filterwarnings('ignore')
+
+from pandas.core.series import Series
+
+#Data Source
+import yfinance as yf
+
+#Data viz
+import plotly.graph_objs as go
+
+#Interval required 5 minutes
+df = yf.download(tickers='TITAN.NS', period='7d', interval='5m')
+#Print data
+#print(data)
+
+#history = Series(data['Close'])
+
+#print(history.tail())
+
+
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt
@@ -6,7 +28,7 @@ from datetime import datetime
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error
 
-df = pd.read_csv("NIFTY.csv")
+# df = pd.read_csv("tatapower.csv").fillna(0)
 
 train_data, test_data = df[0:int(len(df)*0.7)], df[int(len(df)*0.7):]
 training_data = train_data['Close'].values
