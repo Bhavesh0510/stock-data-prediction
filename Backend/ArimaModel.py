@@ -23,7 +23,7 @@ for time_point in range(N_test_observations):
     true_test_value = test_data[time_point]
     history.append(true_test_value)
 MSE_error = mean_squared_error(test_data, model_predictions)
-print('Testing Mean Squared Error is {}'.format(MSE_error))
+#print('Testing Mean Squared Error is {}'.format(MSE_error))
 
 
 # test_set_range = df[int(len(df)*0.7):].index
