@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //import fire from './Firebase';
 //import fire from './fire';
-import {Redirect} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const Register = () => {
 
@@ -122,7 +122,7 @@ const Register = () => {
                                 </button>
                             </div>
                             <br />
-                            <h5>Already have a Account?<a href="/Login" > Sign In</a></h5>
+                            <h5>Already have a Account?<NavLink to="/Login" > Sign In</NavLink></h5>
                         </form>
                     </div>
                 </div>
