@@ -1,0 +1,52 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: linear-gradient(to right, #4f5455 0%, #4c4849 100%);
+    font-size: 12px;
+  }
+
+  h6{
+    color:aqua;
+  }
+
+  .head-title{
+      color:#0f2fe7;
+      text-decoration: underline;
+      text-transform: uppercase;
+  }
+
+  img{
+      border-radius: 10px;
+      border: #ed1c6f;
+  }
+
+  .about-title{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #ea1d6f;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    animation: backwards;
+      
+  }
+
+  .names{
+      text-decoration: solid;
+      text-transform: uppercase;
+      color: chartreuse;
+  }
+
+.p1{
+    color:aqua;
+}
+
+.title{
+    color:#26f10b;
+}

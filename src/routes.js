@@ -1,9 +1,9 @@
 import Dashboard from "views/Dashboard.js";
 import UserProfile from "views/UserProfile.js";
 import Typography from "views/Typography.js";
-import Icons from "views/Icons.js";
-import Notifications from "views/Notifications.js";
-import Upgrade from "views/Upgrade.js";
+import Subscription from "views/Subscription.js";
+import About from "views/About.js";
+import Terms from "views/Terms.js";
 import Predict from "views/Predict";
 import Contact from "views/Contact";
 
@@ -25,15 +25,15 @@ const dashboardRoutes = [
   {
     path: "/get_quote",
     name: "Mine Prediction",
-    icon: "nc-icon nc-notes",
+    icon: "nc-icon nc-chart-bar-32",
     component: Predict,
     layout: "/admin",
   },
   {
-    path: "/icons",
-    name: "Icons",
-    icon: "nc-icon nc-atom",
-    component: Icons,
+    path: "/Subscription",
+    name: "Subscription",
+    icon: "nc-icon nc-chart",
+    component: Subscription,
     layout: "/admin",
   },
   {
@@ -47,7 +47,14 @@ const dashboardRoutes = [
     path: "/About",
     name: "About Us",
     icon: "nc-icon nc-bell-55",
-    component: Notifications,
+    component: About,
+    layout: "/admin",
+  },
+  {
+    path: "/Terms",
+    name: "T&C",
+    icon: "nc-icon nc-notes",
+    component: Terms,
     layout: "/admin",
   },
   

@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.2",
+    "add": "^2.0.6",
     "bootstrap": "4.6.0",
     "chartist": "0.10.1",
     "gulp": "4.0.2",
@@ -15,7 +16,9 @@
     "react-notification-alert": "0.0.13",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.1"
+    "react-scripts": "4.0.1",
+    "react-slideshow-image": "^3.6.0",
+    "yarn": "^1.22.17"
   },
   "optionalDependencies": {
     "jquery": "3.5.1",
