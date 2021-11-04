@@ -14,7 +14,7 @@
   }
 
   .head-title{
-      color:#0f2fe7;
+      color:#26f10b;
       text-decoration: underline;
       text-transform: uppercase;
   }
@@ -47,6 +47,12 @@
     color:aqua;
 }
 
+.p2{
+  color:#26f10b;
+}
+
+
 .title{
     color:#26f10b;
 }
+

@@ -3,6 +3,7 @@ import "../assets/css/about.css";
 
 function Terms() {
     return (
+        <>
         <div>
             <h3 className="about-title pt-3 ">TERMS AND CONDITIONS</h3>
             <h3 class="title">1. Terms</h3>
@@ -11,9 +12,9 @@ function Terms() {
             <h3 class="title">2. Use License</h3>
             <p class="p1">Permission is granted to temporarily download one copy of the materials on MINE STOCKS's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
             <br/>
-            <p class="p1">1. Modify or copy the materials;
+            <p class="p1">1. Modify or copy the materials;<br/><br/>
             2. Use the materials for any commercial purpose or for any public display;<br/><br/>
-            3. Attempt to reverse engineer any software contained on MINE STOCKS's Website;<br/>
+            3. Attempt to reverse engineer any software contained on MINE STOCKS's Website;<br/><br/>
             4. Remove any copyright or other proprietary notations from the materials; or<br/><br/>
             5. Transferring the materials to another person or "mirror" the materials on any other server.<br/><br/>
             This will let MINE STOCKS to terminate upon violations of any of these restrictions. Upon termination, your viewing right will also be terminated and you should destroy any downloaded materials in your possession whether it is printed or electronic format.</p>
@@ -41,6 +42,7 @@ function Terms() {
 
             If you encounter any trouble while trying to cancel your account or that you don't receive a confirmation mail, please reach out to us by email mention on contact us page. Make sure to document your issue with screenshots of the cancellation page and to use "cancellation issue" as email subject. Any cancellation request that is undocumented or that doesn't use "cancellation issue" as a subject will be ignored by our system.</p>
         </div>
+        </>
     )
 }
 

@@ -32,7 +32,7 @@ const dashboardRoutes = [
   {
     path: "/Subscription",
     name: "Subscription",
-    icon: "nc-icon nc-chart",
+    icon: "nc-icon nc-paper-2",
     component: Subscription,
     layout: "/admin",
   },
