@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import ChartistGraph from "react-chartist";
-import "C:/Users/HP/Desktop/ReactStock/stock-data-prediction/node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 // react-bootstrap components
 import {
   Badge,
@@ -18,12 +18,23 @@ import {
 } from "react-bootstrap";
 //import "./index.css";
 
-
 function Dashboard() {
 
+  const[sta,setstatus] = useState([]);
   const[dta,setdata] = useState([]);
   const[dta1,setdata1] = useState([]);
   const[value,setvalue] = useState([]);
+
+  const getStatus = async()=>{
+    try{
+   const res0 = await fetch("https://www1.nseindia.com//emerge/homepage/smeNormalMktStatus.json");
+   const data0 = await res0.json();
+   console.log(data0.data);
+   setstatus(data0.data);
+    }catch(err){
+        console.log(err);
+    }
+}
 
   const getStockData = async()=>{
       try{
@@ -59,6 +70,7 @@ function Dashboard() {
       }
 
   useEffect(() => {
+      getStatus();
       getStockData();
       getGainers();
       getValue();
@@ -68,6 +80,7 @@ function Dashboard() {
   return (
     <>
       <Container fluid>
+        <div className="legend" id="st"><b>Market Status: </b></div><hr/>
         <div className="table-responsive" id="ov">
       <table className="table table-dark table-striped"> 
           <thead> 
