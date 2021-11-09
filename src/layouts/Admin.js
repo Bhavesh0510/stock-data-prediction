@@ -7,7 +7,7 @@ import Sidebar from "components/Sidebar/Sidebar";
 
 import routes from "routes.js";
 
-import sidebarImage from "assets/img/sidebar-3.jpg";
+import sidebarImage from "assets/img/sidebar-4.jpg";
 import Dashboard from "views/Dashboard";
 
 function Admin() {
