@@ -8,15 +8,22 @@ import "./assets/css/animate.min.css";
 import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
 import "./assets/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
 import AdminLayout from "layouts/Admin.js";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "Reducer/RootReducer";
+
+
+const store = createStore(rootReducer)
+
 
 ReactDOM.render(
+  <Provider store={store}>
   <BrowserRouter>
     <Switch>
       <Route path="/" render={(props) => <AdminLayout {...props} />} />
-      <Redirect from="/" to="/dashboard" />
     </Switch>
-  </BrowserRouter>,
+    </BrowserRouter>
+    </Provider>,
   document.getElementById("root")
 );

@@ -9,6 +9,16 @@ import routes from "routes.js";
 
 import sidebarImage from "assets/img/sidebar-3.jpg";
 import Dashboard from "views/Dashboard";
+import Error from "views/Error";
+import User from "views/UserProfile";
+import Predict from "views/Predict";
+import Contact from "views/Contact";
+import About from "views/About";
+import Plans from "views/Plans";
+import Login from "views/Login";
+import Register from "views/Register";
+import { firebaseApp } from "Firebase";
+
 
 function Admin() {
   const [image, setImage] = React.useState(sidebarImage);
@@ -16,21 +26,8 @@ function Admin() {
   const [hasImage, setHasImage] = React.useState(true);
   const location = useLocation();
   const mainPanel = React.useRef(null);
-  const getRoutes = (routes) => {
-    return routes.map((prop, key) => {
-        return (
-          <Route
-            path={prop.path}
-            render={(props) => <prop.component {...props} />}
-            // component={prop}
-            key={key}
-          />
-        );
-      // } else {
-      //   return null;
-      // }
-    });
-  };
+  
+  
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -44,16 +41,27 @@ function Admin() {
       element.parentNode.removeChild(element);
     }
   }, [location]);
+  
+  
+  
   return (
     <>
       <div className="wrapper">
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
           <AdminNavbar />
-          <div className="content">
+          <div className="">
             <Switch>
-              {getRoutes(routes)}
-            
+              <Route exact path="/" component={Dashboard} />
+              <Route exact path="/user" component={User} />
+              <Route exact path="/get_quote" component={Predict} />
+              <Route exact path="/Contact" component={Contact} />
+              <Route exact path="/About" component={About} />
+              <Route exact path="/plans" component={Plans} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              
+              <Route component={Error} />
             </Switch>
           </div>
           <Footer />
