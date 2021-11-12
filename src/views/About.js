@@ -26,13 +26,13 @@ function About() {
                   <br />
                 </h6>
               </div>
-              <img src={aboutImg} className="col-lg-6" alt="financeimage" />
+              <img src={aboutImg} className="col-lg-6" alt="financeimage" style={{borderRadius:"31px"}}/>
             </div>
             <div className="brackline"></div>
             <div className="about-vision container">
               <h3 className="head-title">Our Vision</h3>
               <div className="vision-body  row mt-lg-4 mt-1">
-                <img src={visionImg} className="col-lg-6" alt="financeimage" />
+                <img src={visionImg} className="col-lg-6" alt="financeimage" style={{borderRadius:"31px"}} />
                 <div className="col-lg-6 d-flex my-auto">
                   <h6
                     style={{ lineHeight: 1.7 }}
@@ -56,7 +56,7 @@ function About() {
                     Our mission is to help more and more people who want to start their journey in stock market by investing in right stocks and by our website they we want to give them more accurate prediction for stocks.
                   </h6>
                 </div>
-                <img src={missionImg} className="col-lg-6" alt="financeimage" />
+                <img src={missionImg} className="col-lg-6" alt="financeimage" style={{borderRadius:"31px"}} />
               </div>
             </div>
 
@@ -64,7 +64,7 @@ function About() {
             <div className="about-vision container">
               <h3 className="head-title">Our Team</h3>
               <div className="vision-body  row mt-lg-4 mt-1">
-              <img src={teamImg} className="col-lg-6" alt="teamimage" />
+              <img src={teamImg} className="col-lg-6" alt="teamimage" style={{borderRadius:"31px"}} />
                 <div className="col-lg-6 d-flex my-auto">
                   <h3
                     style={{ lineHeight: 1.7 }}

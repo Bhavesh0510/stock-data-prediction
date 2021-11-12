@@ -106,7 +106,7 @@ function Dashboard() {
   return (
     <>
       <Container fluid>
-        <h4 className="legend" id="st" style={{textAlign:"center"}}><b>Market Status: </b><span style={{color:"#26f10b",textTransform:"uppercase"}}>{sta.NormalMktStatus}</span></h4><hr/>
+        <h4 className="legend" id="st" style={{textAlign:"center",color:"blueviolet"}}><b>Market Status: </b><span style={{color:"green",textTransform:"uppercase"}}>{sta.NormalMktStatus}</span></h4><hr/>
         <div className="table-responsive" id="ov">
       <table className="table table-dark table-striped"> 
           <thead> 

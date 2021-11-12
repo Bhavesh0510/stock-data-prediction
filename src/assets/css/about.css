@@ -5,16 +5,16 @@
   }
 
   body {
-    background: linear-gradient(to right, #4f5455 0%, #4c4849 100%);
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
     font-size: 12px;
   }
 
   h6{
-    color:aqua;
+    color:rgb(8, 32, 32);
   }
 
   .head-title{
-      color:#26f10b;
+      color:#2609cc;
       text-decoration: underline;
       text-transform: uppercase;
   }
@@ -40,19 +40,19 @@
   .names{
       text-decoration: solid;
       text-transform: uppercase;
-      color: chartreuse;
+      color: rgb(61, 59, 59);
   }
 
 .p1{
-    color:aqua;
+    color:rgb(1, 14, 14);
 }
 
 .p2{
-  color:#26f10b;
+  color:#062e02;
 }
 
 
 .title{
-    color:#26f10b;
+    color:#2609cc;
 }
 
