@@ -1,9 +1,11 @@
 
-import React, { Component } from "react";
-import { useLocation } from "react-router-dom";
+import React, { Component, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 
 import routes from "routes.js";
+import { auth } from "Firebase";
+import { useSelector } from "react-redux";
 
 function Header() {
   const location = useLocation();
@@ -19,6 +21,7 @@ function Header() {
     document.body.appendChild(node);
   };
 
+  
   const getBrandText = () => {
     for (let i = 0; i < routes.length; i++) {
       if (location.pathname.indexOf(routes[i].path) !== -1) {
@@ -29,8 +32,21 @@ function Header() {
       }
     }
   };
+
+  const [userdata, setuserdata] = useState();
+
+  useEffect(() => {
+    setuserdata(auth.currentUser)
+  }, [])
+  
+  const user = useSelector(state => state.userData)
+  useEffect(() => {
+    console.log(user);
+  }, [user])
+  
+
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" sticky={"top"}>
       <Container fluid>
         <div className="d-flex justify-content-center align-items-center ml-2 ml-lg-0">
           <Button
@@ -66,7 +82,7 @@ function Header() {
                 href="#"
                 onClick={(e) => e.preventDefault()}
               >
-                <span className="no-icon">Log out</span>
+                { userdata ? <span className="no-icon">Log out</span> : <><Link to="/Login" className="no-icon">Log in</Link> &nbsp; | &nbsp;<Link to="/Register" className="no-icon">Register</Link></> }
               </Nav.Link>
             </Nav.Item>
           </Nav>
