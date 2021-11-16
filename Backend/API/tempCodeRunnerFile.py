@@ -1,1 +1,1 @@
-key1
+fetch_details

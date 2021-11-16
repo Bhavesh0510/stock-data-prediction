@@ -6,10 +6,19 @@ import About from "views/About.js";
 import Terms from "views/Terms.js";
 import Predict from "views/Predict";
 import Contact from "views/Contact";
+import Plans from "views/Plans";
 
 const dashboardRoutes = [
+  {
+    upgrade : true,
+    path: "/plans",
+    name: "Upgrade Plan",
+    icon: "nc-icon nc-chart-pie-35",
+    component: Plans,
+    layout: "/admin",
+  },
   { 
-    path: "/dashboard",
+    path: "/",
     name: "Dashboard",
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,

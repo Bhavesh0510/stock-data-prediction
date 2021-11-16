@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class Footer extends Component {
   render() {
     return (
-      <footer className="footer px-0 px-lg-3 ">
+      <footer className="footer px-0 px-lg-3 fixed">
         <Container fluid>
             <p className="copyright text-center">
               © {new Date().getFullYear()}{" "}

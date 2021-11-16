@@ -1,15 +1,20 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 
 import { Nav } from "react-bootstrap";
 
+<<<<<<< HEAD
 import logo from "assets/img/reactlogo4.png";
+=======
+>>>>>>> e11bd429b0c02cf8843e76c96e5e29dab59796df
 
 function Sidebar({ color, image, routes }) {
   const location = useLocation();
   const activeRoute = (routeName) => {
-    return location.pathname.indexOf(routeName) > -1 ? "active" : "";
+    return location.pathname === routeName ? "active" : "";
   };
+
+  
   return (
     <div className="sidebar" data-image={image} data-color={color}>
       <div
@@ -42,7 +47,7 @@ function Sidebar({ color, image, routes }) {
                   className={
                     prop.upgrade
                       ? "active active-pro"
-                      : activeRoute(prop.layout + prop.path)
+                      : activeRoute(prop.path)
                   }
                   key={key}
                 >
