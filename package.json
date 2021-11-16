@@ -7,11 +7,7 @@
     "await": "^0.2.6",
     "bootstrap": "4.6.0",
     "chartist": "0.10.1",
-<<<<<<< HEAD
     "cors": "^2.8.5",
-=======
-    "firebase": "^9.2.0",
->>>>>>> e11bd429b0c02cf8843e76c96e5e29dab59796df
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "node-sass": "4.14.1",
@@ -20,20 +16,12 @@
     "react-chartist": "^0.14.4",
     "react-dom": "17.0.1",
     "react-notification-alert": "0.0.13",
-<<<<<<< HEAD
     "react-pricing-table": "^0.3.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.1",
     "react-slideshow-image": "^3.6.0",
     "yarn": "^1.22.17"
-=======
-    "react-redux": "^7.2.6",
-    "react-router": "5.2.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.1",
-    "redux": "^4.1.2"
->>>>>>> e11bd429b0c02cf8843e76c96e5e29dab59796df
   },
   "optionalDependencies": {
     "jquery": "3.5.1",
