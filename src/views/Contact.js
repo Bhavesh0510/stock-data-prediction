@@ -21,7 +21,7 @@ function Contact() {
            <Container fluid>
         <Row>
           <Col md="12">
-            <Card className="contact-us">
+            <Card className="contact-us" style={{border:"1px solid gray"}}>
               <Card.Header>
                 <Card.Title as="h4">Contact Us</Card.Title>
               </Card.Header>
@@ -34,7 +34,7 @@ function Contact() {
                         <Form.Control
                           placeholder="Enter Your Email Address"
                           type="text"
-                          required></Form.Control>
+                          required style={{border:"1px solid gray"}}></Form.Control>
                       </Form.Group>
                     </Col>
                   </Row>
@@ -44,7 +44,7 @@ function Contact() {
                         <Form.Control
                           placeholder="Your Name"
                           type="text"
-                          required></Form.Control>
+                          required style={{border:"1px solid gray"}}></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="pl-1" md="6">
@@ -54,7 +54,7 @@ function Contact() {
                           defaultValue="Andrew"
                           placeholder="Contact number"
                           type="number"
-                          required></Form.Control>
+                          required style={{border:"1px solid gray"}}></Form.Control>
                       </Form.Group>
                     </Col>
                   <Row>
@@ -64,7 +64,7 @@ function Contact() {
                         <Form.Control
                           placeholder="Write Message"
                           type="text"
-                        required></Form.Control>
+                        required style={{border:"1px solid gray"}}></Form.Control>
                       </Form.Group>
                     </Col>
                   </Row>
@@ -72,7 +72,7 @@ function Contact() {
                     className="btn-fill pull-right"
                     type="submit"
                     variant="info">
-                    Contact us
+                    Contact Us
                   </Button>
                   <div className="clearfix"></div>
                 </Form>
