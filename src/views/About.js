@@ -1,8 +1,8 @@
 import React from 'react'
 import "./about.css";
 import dharil from "../images/dharil.png";
-import jay from "../images/JAY.png";
-import bhavesh from "../images/bhavesh.png";
+import jay from "../images/JAY.jpg";
+import bhavesh from "../images/bhavesh.jpg";
 
 const About = () => {
     return (
