@@ -13,7 +13,6 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "Reducer/RootReducer";
 
-
 const store = createStore(rootReducer)
 
 

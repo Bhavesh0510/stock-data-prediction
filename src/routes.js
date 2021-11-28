@@ -1,7 +1,6 @@
 import Dashboard from "views/Dashboard.js";
 import UserProfile from "views/UserProfile.js";
 import Typography from "views/Typography.js";
-import Subscription from "views/Subscription.js";
 import About from "views/About.js";
 import Terms from "views/Terms.js";
 import Predict from "views/Predict";
@@ -9,14 +8,6 @@ import Contact from "views/Contact";
 import Plans from "views/Plans";
 
 const dashboardRoutes = [
-  {
-    upgrade : true,
-    path: "/plans",
-    name: "Upgrade Plan",
-    icon: "nc-icon nc-chart-pie-35",
-    component: Plans,
-    layout: "/admin",
-  },
   { 
     path: "/",
     name: "Dashboard",
@@ -36,13 +27,6 @@ const dashboardRoutes = [
     name: "Mine Prediction",
     icon: "nc-icon nc-chart-bar-32",
     component: Predict,
-    layout: "/admin",
-  },
-  {
-    path: "/Subscription",
-    name: "Subscription",
-    icon: "nc-icon nc-paper-2",
-    component: Subscription,
     layout: "/admin",
   },
   {

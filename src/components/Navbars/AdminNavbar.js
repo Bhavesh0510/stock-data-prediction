@@ -4,11 +4,15 @@ import { Link, useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 
 import routes from "routes.js";
-import { auth } from "Firebase";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setuser } from "Reducer/Action";
+import {
+  logout
+} from "../../firebase";
 
 function Header() {
   const location = useLocation();
+  const dispatch = useDispatch()
   const mobileSidebarToggle = (e) => {
     e.preventDefault();
     document.documentElement.classList.toggle("nav-open");
@@ -33,17 +37,21 @@ function Header() {
     }
   };
 
-  const [userdata, setuserdata] = useState();
-
-  useEffect(() => {
-    setuserdata(auth.currentUser)
-  }, [])
+  
+  const [userdata, setuserdata] = useState({});
   
   const user = useSelector(state => state.userData)
+
   useEffect(() => {
-    console.log(user);
+    setuserdata(user)
+    
   }, [user])
   
+  const signout = () => {
+    logout()
+    dispatch(setuser({}))    
+  }
+
 
   return (
     <Navbar bg="light" expand="lg" sticky={"top"}>
@@ -82,7 +90,7 @@ function Header() {
                 href="#"
                 onClick={(e) => e.preventDefault()}
               >
-                { userdata ? <span className="no-icon">Log out</span> : <><Link to="/Login" className="no-icon">Log in</Link> &nbsp; | &nbsp;<Link to="/Register" className="no-icon">Register</Link></> }
+                { Object.keys(userdata).length > 0 ? <span className="no-icon" onClick={signout}>Log out</span> : <><Link to="/Login" className="no-icon">Log in</Link> &nbsp; | &nbsp;<Link to="/Register" className="no-icon">Register</Link></> }
               </Nav.Link>
             </Nav.Item>
           </Nav>

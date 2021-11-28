@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { useLocation, Route, Switch } from "react-router-dom";
 
 import AdminNavbar from "components/Navbars/AdminNavbar";
@@ -18,9 +18,14 @@ import Plans from "views/Plans";
 import Login from "views/Login";
 import Terms from "views/Terms";
 import Register from "views/Register";
-import { firebaseApp } from "Firebase";
-import Upgrade from "views/Upgrade";
-import Subscription from "views/Subscription";
+// import { firebaseApp } from "Firebase";
+// import { auth } from 'Firebase';
+import { auth,db } from "../firebase";
+import { useDispatch, useSelector } from "react-redux";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { setuser } from "Reducer/Action";
 
 
 function Admin() {
@@ -29,7 +34,7 @@ function Admin() {
   const [hasImage, setHasImage] = React.useState(true);
   const location = useLocation();
   const mainPanel = React.useRef(null);
-  
+  const dispatch = useDispatch()
   
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
@@ -45,8 +50,36 @@ function Admin() {
     }
   }, [location]);
   
+  useEffect(() => {
+    if (auth?.currentUser?.uid) {
+      db.collection("users").doc(auth?.currentUser?.uid).get().then(doc => {
+        if (doc.exists) {
+            dispatch(setuser(doc.data()))
+        }
+        else {
+            console.log("No DATA FOUND");
+        }
+    }).catch(e => console.log("error:", e))
+      
+    }
+  },[])
   
+  // const user = useSelector(state => state.userData)
+  // useEffect(() => {
+  //   console.log(user);
+  // }, [user])
   
+  const notify = (msg) => {
+    toast(<b>{msg}</b>, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      });
+  }
   return (
     <>
       <div className="wrapper">
@@ -60,16 +93,25 @@ function Admin() {
               <Route exact path="/get_quote" component={Predict} />
               <Route exact path="/Contact" component={Contact} />
               <Route exact path="/About" component={About} />
-              <Route exact path="/plans" component={Subscription} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" render = {()=><Login notify={notify} />} />
+              <Route exact path="/register" render={() => <Register notify={notify} />} />
               <Route exact path="/Terms" component={Terms} />
-              
               <Route component={Error} />
             </Switch>
           </div>
           <Footer />
         </div>
+            <ToastContainer
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss={false}
+              draggable={false}
+              pauseOnHover
+              />
       </div>
     </>
   );

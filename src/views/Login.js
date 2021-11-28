@@ -1,20 +1,26 @@
-import { signInWithEmailAndPassword } from '@firebase/auth';
-import { db } from 'Firebase';
-import { auth } from 'Firebase';
+// import { signInWithEmailAndPassword } from '@firebase/auth';
+// import { db } from 'Firebase';
+// import { auth } from 'Firebase';
 import React, { useEffect, useState } from 'react'
 import { Alert } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { setuser } from 'Reducer/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link,useHistory } from 'react-router-dom';
+import { setuser, setloader } from 'Reducer/Action';
 import "./Views.css"
+import {
+    auth,db,
+    signInWithEmailAndPassword,
+    signInWithGoogle,
+} from "../firebase";
+import Loader from 'components/Loader';
 
-const Login = () => {
-
-    const [error, seterror] = useState("")
+const Login = (props) => {
+    const history = useHistory()
     const [data, setData] = useState({
         email: '',
         password: '',
     });
+    const loading = useSelector(state => state.loading)
 
     const dispatch = useDispatch()
     const InputEvent = (event) => {
@@ -25,16 +31,12 @@ const Login = () => {
                 [name]: value,
             };
         });
-        seterror("")
     };
 
-    useEffect(() => {
-        return () => {
-            seterror("")
-        }
-    },[])
-
-    const formSubmit = (e) => {
+    const seterror = (msg) => {
+        props.notify(msg)
+    }
+    const formSubmit = async (e) => {
         var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         e.preventDefault()
         if (data.email === "") {
@@ -52,30 +54,45 @@ const Login = () => {
             seterror("Password Should be atlist 8 characters")
         }
         else {
-            
-        signInWithEmailAndPassword(auth, data.email, data.password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                dispatch(setuser(user.uid))
+            dispatch(setloader(true))
+            let res = await signInWithEmailAndPassword(data.email, data.password)
+            if (res.error) {
+                seterror(res.error)
+            }
+            else {
+                db.collection("users").doc(res?.user?.uid).get().then(doc => {
+                    if (doc.exists) {
+                        dispatch(setuser(doc.data()))
+                        history.push("/");
+                        dispatch(setloader(false))
+                    }
+                    else {
+                        console.log("No DATA FOUND");
+                    }
+                }).catch(e => console.log("error:", e))
+            }
+        // signInWithEmailAndPassword(auth, data.email, data.password)
+        //     .then((userCredential) => {
+        //         const user = userCredential.user;
+        //         dispatch(setuser(user.uid))
                 
-  })
-  .catch((error) => {
-      const errorCode = error.code;
-    //   if(error.message?.split("(")[1]?.split(")")[0]?.split("/")[1] === "user-not-found")
-      seterror("User not found please register.");
-      console.log(error);
-  });
+//         }
+//   )
+//   .catch((error) => {
+//       const errorCode = error.code;
+//     //   if(error.message?.split("(")[1]?.split(")")[0]?.split("/")[1] === "user-not-found")
+//       seterror("User not found please register.");
+//       console.log(error);
+//   });
         }
     }
     return (
         <>
+            {loading && <Loader />}
         <div className="container">
             <form className="form">
                 <h3 style={{textAlign:"center"}}>Login</h3>
 
-                    {error?.length > 0 && <div className="alert"><Alert  variant="danger" onClose={() => seterror("")} dismissible>
-                        <p>{error}</p>
-                    </Alert></div>}
                 <div className="form-group">
                     <label>First name</label>
                     <input type="text" className="form-control" placeholder="First name" name="email" onChange={InputEvent} />

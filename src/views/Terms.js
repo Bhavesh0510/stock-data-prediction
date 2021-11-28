@@ -37,10 +37,7 @@ function Terms() {
             <h4 class="title">8. Governing Law</h4>
             <p class="p1">Any claim related to MINE STOCKS Website shall be governed by the laws of Belgium without regards to its conflict of law provisions.</p>
 
-            <h4 class="title">9. Subscription cancellation</h4>
-            <p class="p1">To process faster account cancellations, any premium account cancellation request must be submitted by following this link. Any cancellation will terminate all of the customer's services, immediately.
-
-            If you encounter any trouble while trying to cancel your account or that you don't receive a confirmation mail, please reach out to us by email mention on contact us page. Make sure to document your issue with screenshots of the cancellation page and to use "cancellation issue" as email subject. Any cancellation request that is undocumented or that doesn't use "cancellation issue" as a subject will be ignored by our system.</p>
+           
         </div>
         </>
     )

@@ -6,6 +6,7 @@ import Loader from 'components/Loader';
 import e from 'cors';
 import { getNumberFormated } from 'CommanFunctions';
 import { getNumberFormatedonly } from 'CommanFunctions';
+import { useSelector } from 'react-redux';
 
 
 function Predict() {
@@ -28,17 +29,17 @@ function Predict() {
                     return res.json()
                 }
             })
-                .then(data => setcompnyList(data.data))
+                .then(data => setcompnyList(data.data)).catch(e => console.log(e))
             
         }
         else {
             setcompnyList([])
         }
     }
+    const userData = useSelector(state => state.userData)
     const predict = (symbol) => {
         setloading(true)
         let c = Object.keys(companies);
-        console.log(c);
         if (c?.includes(symbol)) {
             setpredictedPrice(companies[symbol])
             setcompnyList([])
@@ -69,14 +70,13 @@ function Predict() {
             }
         }).then(data => {
             setselectedCompanyInfo(data.INFO)
-            console.log(data.INFO);
-        })
+        }).catch(e => console.log(e))
     }
 
     return (
         <>
+            {Object.keys(userData).length > 0 ?  <>
             {
-            
             loading && <Loader />
             }
             <div className="stock-name container-sm">
@@ -254,7 +254,13 @@ function Predict() {
 
                     </div>
                 }
+            
                 </div>
+            </> : <div className="please-login">
+                    
+                    <p>
+                    <i class="fa fa-lock" style={{fontSize:48, marginLeft:"40%"} }></i><br/>LOGIN TO CONTINUE</p></div>
+}
         </>
     )
 }
