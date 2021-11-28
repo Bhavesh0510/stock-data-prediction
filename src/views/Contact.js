@@ -1,54 +1,88 @@
 import React from 'react'
-import "../assets/css/contact.css";
+import {
+    Badge,
+    Button,
+    Card,
+    Navbar,
+    Nav,
+    Table,
+    Container,
+    Row,
+    Col,
+    Form,
+    OverlayTrigger,
+    Tooltip,
+  } from "react-bootstrap";
 
 function Contact() {
     return (
         <>
-<div class="background">
-  <div class="container">
-    <div class="screen">
-      <div class="screen-header">
-        <div class="screen-header-right">
-          <div class="screen-header-ellipsis"></div>
-          <div class="screen-header-ellipsis"></div>
-          <div class="screen-header-ellipsis"></div>
-        </div>
-      </div>
-      <div class="screen-body">
-        <div class="screen-body-item left">
-          <div class="app-title">
-            <span>CONTACT US</span>
-          </div><br/>
-          <h4>We Would Love To Hear From You</h4><br/>
-          <div class="app-contact"><h5>Our Location:</h5>
-          <p>Uka Tarsadiya University, Bardoli, Gujarat</p></div>
-        </div>
-        <div class="screen-body-item">
-          <div class="app-form">
-            <div class="app-form-group">
-              <input class="app-form-control" placeholder="NAME"/>
-            </div>
-            <div class="app-form-group">
-              <input class="app-form-control" placeholder="EMAIL"/>
-            </div>
-            <div class="app-form-group">
-              <input class="app-form-control" placeholder="CONTACT NO"/>
-            </div>
-            <div class="app-form-group message">
-              <input class="app-form-control" placeholder="MESSAGE"/>
-            </div>
-            <div class="app-form-group buttons">
-              <button class="app-form-button">CANCEL</button>
-              <button class="app-form-button">SEND</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+           <Container fluid>
+        <Row>
+          <Col md="8">
+            <Card>
+              <Card.Header>
+                <Card.Title as="h4">Contact Us</Card.Title>
+                <hr/>
+              </Card.Header>
+              <Card.Body>
+                <Form>
+                <Row>
+                    <Col md="7">
+                      <Form.Group>
+                        <label>Email Address</label>
+                        <Form.Control
+                          placeholder="Enter Your Email Address"
+                          type="text"
+                          required></Form.Control>
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                    <Col className="pr-1" md="6">
+                      <Form.Group>
+                        <label>Name</label>
+                        <Form.Control
+                          placeholder="Your Name"
+                          type="text"
+                          required></Form.Control>
+                      </Form.Group>
+                    </Col>
+                    <Col className="pl-1" md="6">
+                      <Form.Group>
+                        <label>Conatct number</label>
+                        <Form.Control
+                          defaultValue="Andrew"
+                          placeholder="Contact number"
+                          type="number"
+                          required></Form.Control>
+                      </Form.Group>
+                    </Col>
+                  <Row>
+                    <Col md="12">
+                      <Form.Group>
+                        <label>Message</label>
+                        <Form.Control
+                          placeholder="Write Message"
+                          type="text"
+                        required></Form.Control>
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                  <Button
+                    className="btn-fill pull-right"
+                    type="submit"
+                    variant="info">
+                    Contact us
+                  </Button>
+                  <div className="clearfix"></div>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
 
-       </>
+        </>
     )
 }
 
