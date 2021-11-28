@@ -28,10 +28,10 @@ function User() {
                   <Row>
                     <Col className="pr-1" md="5">
                       <Form.Group>
-                        <label>Company (disabled)</label>
+                        <label>Company</label>
                         <Form.Control
                           defaultValue="Creative Code Inc."
-                          disabled
+                          
                           placeholder="Company"
                           type="text"
                         ></Form.Control>
