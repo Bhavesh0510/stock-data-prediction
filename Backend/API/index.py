@@ -28,7 +28,8 @@ class Tickers(Resource):
         for item in f:
             data = item.split(',')
             b = str(data[1]).lower()
-            if name in b and data[2] == exchange:
+            symbol = str(data[0]).lower()
+            if ((name in b) or name in symbol) and data[2] == exchange:
                 d = {"symbol": data[0], "name": data[1]}
                 arr.append(d)
         if (len(arr) == 0):
@@ -98,7 +99,7 @@ api = Api(app)
 
 
 api.add_resource(Tickers, '/get_ticker', endpoint='get_ticker')
-api.add_resource(Predict, '/get_data', endpoint='get_data')
+api.add_resource(Predict, '/predict', endpoint='predict~')
 api.add_resource(Details, '/fetch_details', endpoint='fetch_details')
 
 

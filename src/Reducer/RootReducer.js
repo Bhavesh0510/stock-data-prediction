@@ -1,12 +1,11 @@
 const initState = {
-    userData : ""
+    userData: {}
 }
 
 const rootReducer = (state = initState, action) => {
     switch (action.type) {
         case "SET_USER" : return {...state, userData:action.payload}
     }
-    console.log(state);
     return state;
 }
 

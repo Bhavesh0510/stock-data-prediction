@@ -3,10 +3,7 @@ import { useLocation, NavLink } from "react-router-dom";
 
 import { Nav } from "react-bootstrap";
 
-<<<<<<< HEAD
 import logo from "assets/img/reactlogo4.png";
-=======
->>>>>>> e11bd429b0c02cf8843e76c96e5e29dab59796df
 
 function Sidebar({ color, image, routes }) {
   const location = useLocation();

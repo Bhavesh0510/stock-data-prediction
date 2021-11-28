@@ -1,1 +1,1 @@
-fetch_details
+name

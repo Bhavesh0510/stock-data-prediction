@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from '@firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from '@firebase/auth';
 import { auth } from 'Firebase';
 import React, { useEffect, useState } from 'react'
 import { Alert, Toast } from 'react-bootstrap';
@@ -43,8 +43,7 @@ const Register = () => {
             seterror("Please enter last name")
         }
         else if (data.email === "") {
-            seterror("Please enter Email")
-            
+            seterror("Please enter Email") 
         }
         else if (!data.email.match(mailformat)) {
             seterror("Please Enter valid Email")
@@ -60,9 +59,16 @@ const Register = () => {
             seterror("Both Password Should be same")
         }
         else {
-                createUserWithEmailAndPassword(auth, data.email, data.password).then((response) => {
-                    console.log(response);
-                }).catch(e => console.log("error :", e ))
+            createUserWithEmailAndPassword(auth, data.email, data.password).then((response) => {
+                console.log(response);
+                // updateProfile({
+                //     displayName: data.fname + " " + data.lname,
+                // }).then(function (res) {
+                //     console.log(res);
+                //  }).catch(function(error) {  console.log(error)});
+                
+                    
+                }).catch(e => console.log("error :", e))
         }
     }
 

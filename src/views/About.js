@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import "../assets/css/about.css";
 import 'react-slideshow-image/dist/styles.css';
@@ -88,16 +87,3 @@ function About() {
 }
 
 export default About;
-=======
-import React from 'react'
-
-function About() {
-    return (
-        <div>
-            About Us
-        </div>
-    )
-}
-
-export default About
->>>>>>> e11bd429b0c02cf8843e76c96e5e29dab59796df

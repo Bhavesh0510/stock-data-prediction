@@ -16,6 +16,7 @@ import Contact from "views/Contact";
 import About from "views/About";
 import Plans from "views/Plans";
 import Login from "views/Login";
+import Terms from "views/Terms";
 import Register from "views/Register";
 import { firebaseApp } from "Firebase";
 
@@ -60,6 +61,7 @@ function Admin() {
               <Route exact path="/plans" component={Plans} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
+              <Route exact path="/Terms" component={Terms} />
               
               <Route component={Error} />
             </Switch>

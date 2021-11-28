@@ -50,7 +50,7 @@ const Register = () => {
         }
         else {
             e.preventDefault();
-            toast.success(`Dear ${data.fullname} Your Message send Successfully`, {
+            toast.success(`${data.fullname} Your Message send Successfully`, {
                 position: "top-center",
                 color: "green",
             });

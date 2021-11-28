@@ -7,4 +7,4 @@ exchange are NSI and BSE only
 
 http://127.0.0.1:5000/fetch_details?ticker=TCS.NS
 
-http://127.0.0.1:5000/get_data?ticker=TCS.NS
+http://127.0.0.1:5000/predict?ticker=TCS.NS

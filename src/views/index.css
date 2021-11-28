@@ -51,3 +51,8 @@
     overflow:scroll;
     border:1px solid #ccc;
 }
+.stock-name{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
