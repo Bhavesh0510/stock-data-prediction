@@ -19,6 +19,8 @@ import Login from "views/Login";
 import Terms from "views/Terms";
 import Register from "views/Register";
 import { firebaseApp } from "Firebase";
+import Upgrade from "views/Upgrade";
+import Subscription from "views/Subscription";
 
 
 function Admin() {
@@ -51,14 +53,14 @@ function Admin() {
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
           <AdminNavbar />
-          <div className="">
+          <div className="container pb-4 mb-4">
             <Switch>
               <Route exact path="/" component={Dashboard} />
               <Route exact path="/user" component={User} />
               <Route exact path="/get_quote" component={Predict} />
               <Route exact path="/Contact" component={Contact} />
               <Route exact path="/About" component={About} />
-              <Route exact path="/plans" component={Plans} />
+              <Route exact path="/plans" component={Subscription} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/Terms" component={Terms} />

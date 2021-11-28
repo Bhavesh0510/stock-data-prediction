@@ -9,6 +9,10 @@
     font-size: 12px;
   }
 
+  .about{
+    display: flex;
+    flex-direction: column;
+  }
   h6{
     color:rgb(8, 32, 32);
   }
@@ -56,3 +60,7 @@
     color:#2609cc;
 }
 
+.about-body{
+  display: flex;
+  flex-direction: column;
+}

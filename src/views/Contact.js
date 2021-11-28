@@ -12,23 +12,23 @@ import {
     Form,
     OverlayTrigger,
     Tooltip,
-  } from "react-bootstrap";
+} from "react-bootstrap";
+import "views/index.css"
 
 function Contact() {
     return (
         <>
            <Container fluid>
         <Row>
-          <Col md="8">
-            <Card>
+          <Col md="12">
+            <Card className="contact-us">
               <Card.Header>
                 <Card.Title as="h4">Contact Us</Card.Title>
-                <hr/>
               </Card.Header>
               <Card.Body>
                 <Form>
                 <Row>
-                    <Col md="7">
+                    <Col  md="7">
                       <Form.Group>
                         <label>Email Address</label>
                         <Form.Control

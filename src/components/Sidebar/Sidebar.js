@@ -3,7 +3,7 @@ import { useLocation, NavLink } from "react-router-dom";
 
 import { Nav } from "react-bootstrap";
 
-import logo from "assets/img/reactlogo4.png";
+import logo from "assets/img/mine-favicon.ico";
 
 function Sidebar({ color, image, routes }) {
   const location = useLocation();
@@ -27,7 +27,7 @@ function Sidebar({ color, image, routes }) {
           >
             <div className="logo-img">
               <img
-                src={require("assets/img/reactlogo4.png").default}
+                src={require("assets/img/logo.png").default}
                 alt="..."
               />
             </div>
