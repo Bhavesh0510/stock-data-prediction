@@ -94,8 +94,8 @@ const Login = (props) => {
                 <h3 style={{textAlign:"center"}}>Login</h3>
 
                 <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" name="email" onChange={InputEvent} />
+                    <label>Email Id</label>
+                    <input type="text" className="form-control" placeholder="First name or Email Id is your username" name="email" onChange={InputEvent} />
                 </div>
 
                 <div className="form-group">
